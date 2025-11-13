@@ -1,0 +1,140 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1E1E"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/titleApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Panel de Temperatura y Humedad"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Temperatura -->
+    <TextView
+        android:id="@+id/textCurrent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-- °C"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="#FF7043"
+        app:layout_constraintTop_toBottomOf="@id/titleApp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:id="@+id/labelTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperatura actual"
+        android:textColor="#AAAAAA"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/textCurrent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp" />
+
+    <!-- Humedad -->
+    <TextView
+        android:id="@+id/textHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-- %"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#42A5F5"
+        app:layout_constraintTop_toBottomOf="@id/labelTemp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:id="@+id/labelHum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Humedad actual"
+        android:textColor="#AAAAAA"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/textHumidity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp" />
+
+    <!-- Última actualización -->
+    <TextView
+        android:id="@+id/lastUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Última actualización: --:--:--"
+        android:textColor="#888888"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/labelHum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Línea separadora -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#333333"
+        app:layout_constraintTop_toBottomOf="@id/lastUpdate"
+        android:layout_marginTop="20dp" />
+
+    <!-- Entradas -->
+    <EditText
+        android:id="@+id/editTemperature"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Temperatura (°C)"
+        android:inputType="numberDecimal"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#777777"
+        android:backgroundTint="#FF7043"
+        app:layout_constraintTop_toBottomOf="@id/lastUpdate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="36dp" />
+
+    <EditText
+        android:id="@+id/editHumidity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Humedad (%)"
+        android:inputType="numberDecimal"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#777777"
+        android:backgroundTint="#42A5F5"
+        app:layout_constraintTop_toBottomOf="@id/editTemperature"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Botón -->
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Enviar datos"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:backgroundTint="#66BB6A"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/editHumidity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
